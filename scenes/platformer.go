@@ -2,6 +2,7 @@ package scenes
 
 import (
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/tnaucoin/go-ecs-ebiten/factory"
 	"github.com/yohamta/donburi"
 	"github.com/yohamta/donburi/ecs"
 	"image/color"
@@ -28,4 +29,9 @@ func (ps *PlatformerScene) configure() {
 	// Add Systems
 	// Add Rendering Systems
 	ps.ecs = pecs
+
+	// Define the world space. Space here is a grid of 16x16 cells.
+	// Each cell will contain 0 or more objects, collisions are found by
+	// checking the cell, and if it contains objects.
+	space := factory.CreateSpace(ps.ecs)
 }
