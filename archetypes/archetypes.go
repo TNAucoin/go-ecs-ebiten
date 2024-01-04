@@ -2,6 +2,8 @@ package archetypes
 
 import (
 	"github.com/tnaucoin/go-ecs-ebiten/components"
+	"github.com/tnaucoin/go-ecs-ebiten/layers"
+	"github.com/tnaucoin/go-ecs-ebiten/tags"
 	"github.com/yohamta/donburi"
 	"github.com/yohamta/donburi/ecs"
 )
@@ -10,6 +12,7 @@ var (
 	Space = newArchetype(
 		components.Space,
 	)
+	Wall = newArchetype(tags.Wall, components.Object)
 )
 
 type archetype struct {
